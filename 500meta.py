@@ -54,7 +54,7 @@ def main():
         result = MetaParser(url, schema).result
         data.append(result)
 	finaldata = str(data)
-	open('500pxID-' + str(inputurl.split('/')[-2]) + '_metadata.txt', 'wb').write(finaldata)
+	open('500pxID_' + str(inputurl.split('/')[-2]) + '_metadata.txt', 'wb').write(finaldata)
 
 
 if __name__ == '__main__':
