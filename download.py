@@ -2,11 +2,11 @@
 # -*- encoding: utf-8 -*-
 from pxmeta import Download_Meta
 from pximage import Download_Image
-from argparse import ArgumentParser
-parser = ArgumentParser()
-parser.add_argument("-u", "--url", dest="myFilenameVariable",
-					help="URL To Scrape", metavar="URL")
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('file', type=argparse.FileType('r'))
 args = parser.parse_args()
-inputurl = str((args.myFilenameVariable))
-Download_Image(str(inputurl))
-Download_Meta(str(inputurl))
+urls = args.file.readlines()
+for i in urls:
+	Download_Image(i)
+	Download_Meta(i)
