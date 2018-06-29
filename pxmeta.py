@@ -2,6 +2,7 @@
 # -*- encoding: utf-8 -*-
 def Download_Meta(urlfromdl):
 	from meta_parser import MetaParser
+	import os
 	inputurl = str(urlfromdl)
 	schema = {
 		'five_hundred_pixels:author': 'five_hundred_pixels:author',
@@ -46,4 +47,4 @@ def Download_Meta(urlfromdl):
 		result = MetaParser(url, schema).result
 		data.append(result)
 	finaldata = str(data)
-	open('500pxID_' + str(inputurl.split('/')[-2]) + '_metadata.txt', 'wb').write(finaldata)
+	open(os.path.join('output', '500pxID_' + str(inputurl.split('/')[-2]) + '_metadata.txt'), 'wb').write(finaldata)
