@@ -47,14 +47,16 @@ def main():
         'twitter:app:id:googleplay': 'twitter:app:id:googleplay'
     }
 
-    urls = inputurl
+    urls = [inputurl]
     data = []
 
     for url in urls:
         result = MetaParser(url, schema).result
         data.append(result)
-    print(data)
+	finaldata = str(data)
+	open('500pxID-' + str(inputurl.split('/')[-2]) + '_metadata.txt', 'wb').write(finaldata)
 
 
 if __name__ == '__main__':
     main()
+
