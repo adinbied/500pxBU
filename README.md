@@ -1,8 +1,10 @@
 # 500pxBU
 
-Requirements:
+##Requirements:
+
 requests, BeautifulSoup4
 
-#Usage:
+## Usage:
 After cloning the repo, use:
-python download.py -u <url> to download the metadata and photo
+
+`python download.py -u <url>` to download the metadata and photo
