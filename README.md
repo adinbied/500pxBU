@@ -1,7 +1,6 @@
 # 500pxBU
 
 ##Requirements:
-
 requests, BeautifulSoup4
 
 ## Usage:
