@@ -2,6 +2,7 @@
 # -*- encoding: utf-8 -*-
 def Download_Image(urlfromdl):
 	import requests
+	import os
 	from meta_parser import MetaParser
 	inputurl = str(urlfromdl)
 	schema = {
@@ -19,7 +20,4 @@ def Download_Image(urlfromdl):
 	downloadurl = str(out)
 	fname = '500pxID_' + str(inputurl.split('/')[-2]) + '_photo.jpg'
 	photodownload = requests.get(downloadurl)
-	open(fname , 'wb').write(photodownload.content)
-
-
-	
+	open(os.path.join('output', fname), 'wb').write(photodownload.content)
